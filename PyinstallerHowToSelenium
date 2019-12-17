@@ -1,4 +1,22 @@
+in abc.py
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+    
+chrome_path = resource_path("chromedriver")
+
+
+
 cmd:  python -m venv projectname
       Scripts\activate.bat
       pip install pyinstaller otherlibs
       Scripts\pyinstaller abc.py -F --add-data "C:\Carl\chromedriver.exe;." 
+      
+      
+      
