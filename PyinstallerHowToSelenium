@@ -1,0 +1,4 @@
+cmd:  python -m venv projectname
+      Scripts\activate.bat
+      pip install pyinstaller otherlibs
+      Scripts\pyinstaller abc.py -F --add-data "C:\Carl\chromedriver.exe;." 
