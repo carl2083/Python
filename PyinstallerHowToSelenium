@@ -14,6 +14,7 @@ chrome_path = resource_path("chromedriver")
 
 
 cmd:  python -m venv projectname
+      cd projectname
       Scripts\activate.bat
       pip install pyinstaller otherlibs
       Scripts\pyinstaller abc.py -F --add-data "C:\Carl\chromedriver.exe;." 
